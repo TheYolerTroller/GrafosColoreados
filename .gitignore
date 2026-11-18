@@ -20,7 +20,6 @@ dist/
 
 # Documentos locales
 docs/
-*.docx
 .~lock.*
 
 # Archivos de sistema e IDEs
