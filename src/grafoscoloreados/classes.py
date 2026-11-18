@@ -84,22 +84,24 @@ class InternalGraph:
 
         Devuelve la lista de pasos (sirve para el log y la prueba de escritorio).
         """
-        self.reset_colors()
-        n = len(self._nodes)
+        self.reset_colors() # Asigna NO_COLOR a todos los nodos
+        n: int = len(self._nodes)
+        # Ordenar los índices a los nodos según su grado
         orden = sorted(range(n), key=lambda v: (-self.degree(v), v))
-        pasos: list[dict] = []
+        pasos: list[dict] = []  # Guardar historial de pasos para el log
 
         for v in orden:
-            prohibidos = sorted(
-                {
-                    self._nodes[u].color_index
-                    for u in self.neighbors(v)
-                    if self._nodes[u].color_index != NO_COLOR
-                }
-            )
-            color = 0
+            # Obtener los colores ya usados de los vecinos de v
+            prohibidos = sorted({
+                self._nodes[u].color_index
+                for u in self.neighbors(v)
+                if self._nodes[u].color_index != NO_COLOR
+            })
+
+            color: int = 0  # Contador de colores utilizados
             while color in prohibidos:
                 color += 1
+
             if color >= len(NODE_COLORS):
                 self.reset_colors()
                 raise ValueError(
@@ -107,12 +109,10 @@ class InternalGraph:
                     f"(solo hay colores del 0 al {len(NODE_COLORS) - 1})."
                 )
             self._nodes[v].color_index = color
-            pasos.append(
-                {
-                    "vertice": v,
-                    "grado": self.degree(v),
-                    "prohibidos": prohibidos,
-                    "color": color,
-                }
-            )
+            pasos.append({
+                "vertice": v,
+                "grado": self.degree(v),
+                "prohibidos": prohibidos,
+                "color": color,
+            })
         return pasos

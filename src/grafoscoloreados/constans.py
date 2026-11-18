@@ -13,7 +13,7 @@ NODE_COLORS: tuple[str, ...] = (
     'tab:cyan',
     'tab:brown',
     'tab:olive',
-    'tab:gray',
     'goldenrod',
     'navy',
+    'tab:gray',
 )
