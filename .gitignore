@@ -1,0 +1,28 @@
+# Entornos virtuales
+.venv/
+venv/
+ENV/
+env/
+
+# Caché y compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Construcción y empaquetado (pip, uv, Nuitka, etc.)
+build/
+dist/
+*.egg-info/
+*.dist-info/
+*.build/
+*.dist/
+*.onefile-build/
+
+# Documentos locales
+*.docx
+.~lock.*
+
+# Archivos de sistema e IDEs
+.DS_Store
+.idea/
+.vscode/
