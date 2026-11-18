@@ -19,6 +19,7 @@ dist/
 *.onefile-build/
 
 # Documentos locales
+docs/
 *.docx
 .~lock.*
 
