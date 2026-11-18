@@ -17,7 +17,7 @@ Aplicación de escritorio interactiva en Python para la **coloración de grafos 
 
 ## Requisitos previos
 
-- **Python** `>= 3.15` (según la configuración en `pyproject.toml`).
+- **Python** `>= 3.14` (según la configuración en `pyproject.toml`).
 - **uv** (opcional, recomendado) o **pip** con el módulo `venv`.
 
 ---
@@ -47,7 +47,7 @@ Puedes ejecutar el proyecto utilizando **uv** o mediante el flujo tradicional co
 
 1. **Crear el entorno virtual:**
    ```bash
-   python3 -m venv .venv
+   python -m venv .venv
    ```
 
 2. **Activar el entorno virtual:**
@@ -61,13 +61,14 @@ Puedes ejecutar el proyecto utilizando **uv** o mediante el flujo tradicional co
      ```
    - En **Windows (PowerShell)**:
      ```powershell
+     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
      .venv\Scripts\Activate.ps1
      ```
 
 3. **Instalar el proyecto y sus dependencias:**
    ```bash
-   pip install --upgrade pip
-   pip install -e .
+   python -m pip install --upgrade pip # Actualizar pip, opcional
+   pip install -e .  # Instalar las librerías en el entorno virtual (Importante incluir el punto '.' al final)
    ```
 
 4. **Ejecutar la aplicación:**

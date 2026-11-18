@@ -3,7 +3,7 @@ name = "grafoscoloreados"
 version = "0.1.0"
 description = "Aplicación interactiva para la coloración de grafos no dirigidos mediante el algoritmo voraz (Welsh-Powell)"
 readme = "README.md"
-requires-python = ">=3.15"
+requires-python = ">=3.14"
 dependencies = [
     "matplotlib>=3.11.2",
     "networkx>=3.7",
