@@ -1,5 +1,3 @@
-# https://medium.com/data-science/graph-coloring-with-networkx-88c45f09b8f4
-# https://networkx.org/documentation/stable/reference/drawing.html
 from grafoscoloreados.constans import NO_COLOR, NODE_COLORS
 
 
